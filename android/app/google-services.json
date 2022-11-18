@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "127334501170",
+    "project_id": "indicart-3b4f9",
+    "storage_bucket": "indicart-3b4f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127334501170:android:3fa796f0dfc6f78ecee52b",
+        "android_client_info": {
+          "package_name": "com.example.indicart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127334501170-civ6gludfv54s8qpjf17445r19m9kjo9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.indicart",
+            "certificate_hash": "be5ef76de2e5a336bd6b57a6e16cdd73178859e8"
+          }
+        },
+        {
+          "client_id": "127334501170-tb4n3d86iacm3lomdlgt2paslti45qk7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCpfkyX4sSh4xOPPmjxmycdfrUzyZFidQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127334501170-tb4n3d86iacm3lomdlgt2paslti45qk7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
