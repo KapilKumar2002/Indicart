@@ -114,7 +114,7 @@ class _ProductScreenState extends State<ProductScreen> {
                                 "Add to cart",
                                 style: TextStyle(color: Colors.black),
                               ),
-                              color: yellowColor,
+                              color: buttonColor,
                               isLoading: false,
                               onPressed: () async {
                                 await CloudFirestoreClass().addProductToCart(

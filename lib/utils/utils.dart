@@ -20,6 +20,7 @@ class Utils {
           ),
         ),
         content: SizedBox(
+          // height: getScreenSize().height,
           width: getScreenSize().width,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

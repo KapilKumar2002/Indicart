@@ -163,7 +163,7 @@ class _SellScreenState extends State<SellScreen> {
                               "Sell",
                               style: TextStyle(color: Colors.black),
                             ),
-                            color: yellowColor,
+                            color: buttonColor,
                             isLoading: isLoading,
                             onPressed: () async {
                               String output = await CloudFirestoreClass()

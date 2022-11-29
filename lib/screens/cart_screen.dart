@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:indicart/model/product_model.dart';
-import 'package:indicart/model/user_details_model.dart';
 import 'package:indicart/providers/user_details_provider.dart';
 import 'package:indicart/resources/cloudfirestore_methods.dart';
 import 'package:indicart/utils/color_themes.dart';
@@ -27,10 +24,6 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: SearchBarWidget(
-        hasBackButton: false,
-        isReadOnly: true,
-      ),
       body: Center(
         child: Stack(
           children: [
@@ -56,7 +49,7 @@ class _CartScreenState extends State<CartScreen> {
                               child: const Text(
                                 "Loading",
                               ),
-                              color: yellowColor,
+                              color: buttonColor,
                               isLoading: true,
                               onPressed: () {});
                         } else {
@@ -65,7 +58,7 @@ class _CartScreenState extends State<CartScreen> {
                                 "Proceed to buy (${snapshot.data!.docs.length}) items",
                                 style: const TextStyle(color: Colors.black),
                               ),
-                              color: yellowColor,
+                              color: buttonColor,
                               isLoading: false,
                               onPressed: () async {
                                 await CloudFirestoreClass().buyAllItemsInCart(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:indicart/utils/color_themes.dart';
 
 class TextFieldWidget extends StatefulWidget {
   final String title;
@@ -59,12 +60,12 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
           decoration: BoxDecoration(boxShadow: [
             isInFocus
                 ? BoxShadow(
-                    color: Colors.orange.withOpacity(0.4),
+                    color: Color.fromARGB(255, 101, 232, 206).withOpacity(0.4),
                     blurRadius: 8,
                     spreadRadius: 2,
                   )
                 : BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Color.fromARGB(255, 98, 221, 184).withOpacity(0.2),
                     blurRadius: 8,
                     spreadRadius: 2,
                   )
@@ -87,7 +88,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
               ),
               focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.orange,
+                  color: Color.fromARGB(255, 0, 225, 157),
                   width: 1,
                 ),
               ),

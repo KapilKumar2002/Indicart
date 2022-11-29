@@ -6,7 +6,6 @@ import 'package:indicart/screens/sell_screen.dart';
 import 'package:indicart/utils/color_themes.dart';
 import 'package:indicart/utils/constants.dart';
 import 'package:indicart/utils/utils.dart';
-import 'package:indicart/widgets/account_screen_app_bar.dart';
 import 'package:indicart/widgets/custom_main_button.dart';
 import 'package:indicart/widgets/products_showcase_list_view.dart';
 import 'package:indicart/widgets/simple_product_widget.dart';
@@ -28,8 +27,7 @@ class _AccountScreenState extends State<AccountScreen> {
     Size screenSize = Utils().getScreenSize();
 
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AccountScreenAppBar(),
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
           height: screenSize.height,
@@ -55,7 +53,7 @@ class _AccountScreenState extends State<AccountScreen> {
                 child: CustomMainButton(
                     child: const Text("Sell",
                         style: TextStyle(color: Colors.black)),
-                    color: yellowColor,
+                    color: buttonColor,
                     isLoading: false,
                     onPressed: () {
                       Navigator.push(

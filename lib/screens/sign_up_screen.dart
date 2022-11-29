@@ -35,7 +35,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     Size screenSize = Utils().getScreenSize();
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
           height: screenSize.height,
@@ -47,9 +47,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.network(
-                    amazonLogo,
-                    height: screenSize.height * 0.10,
+                  const Text(
+                    "Indicart",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35,
+                        fontStyle: FontStyle.italic),
                   ),
                   SizedBox(
                     height: screenSize.height * 0.75,
@@ -69,10 +72,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text(
-                              "Sign-Up",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 33),
+                            const Center(
+                              child: Text(
+                                "Sign-Up",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500, fontSize: 33),
+                              ),
                             ),
                             TextFieldWidget(
                               title: "Name",
@@ -109,7 +114,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         letterSpacing: 0.6,
                                         color: Colors.black),
                                   ),
-                                  color: yellowColor,
+                                  color: buttonColor,
                                   isLoading: isLoading,
                                   onPressed: () async {
                                     setState(() {
@@ -144,15 +149,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          "Already have account?",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          height: 1,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
                   CustomMainButton(
                       child: const Text(
-                        "Back",
+                        "Sign In",
                         style: TextStyle(
                           letterSpacing: 0.6,
                           color: Colors.black,
                         ),
                       ),
-                      color: Colors.grey[400]!,
+                      color: buttonColor,
                       isLoading: false,
                       onPressed: () {
                         Navigator.pushReplacement(context,

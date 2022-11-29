@@ -10,7 +10,7 @@ class CategoriesHorizontalListViewBar extends StatelessWidget {
     return Container(
       height: kAppBarHeight,
       width: double.infinity,
-      color: Colors.white,
+      color: Color.fromARGB(255, 170, 244, 233),
       child: ListView.builder(
           itemCount: categoriesList.length,
           scrollDirection: Axis.horizontal,

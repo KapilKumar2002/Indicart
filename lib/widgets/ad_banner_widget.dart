@@ -67,10 +67,6 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               getSmallAdWidget(
-                index: 0,
-                side: smallAdDimension,
-              ),
-              getSmallAdWidget(
                 index: 1,
                 side: smallAdDimension,
               ),

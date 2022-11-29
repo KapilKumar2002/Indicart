@@ -12,7 +12,6 @@ const String amazonLogoUrl =
     "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Amazon_icon.svg/2500px-Amazon_icon.svg.png";
 
 const List<String> categoriesList = [
-  "Prime",
   "Mobiles",
   "Fashion",
   "Electronics",
@@ -31,7 +30,6 @@ const List<Widget> screens = [
 ];
 
 const List<String> categoryLogos = [
-  "https://m.media-amazon.com/images/I/11uufjN3lYL._SX90_SY90_.png",
   "https://m.media-amazon.com/images/I/116KbsvwCRL._SX90_SY90_.png",
   "https://m.media-amazon.com/images/I/115yueUc1aL._SX90_SY90_.png",
   "https://m.media-amazon.com/images/I/11qyfRJvEbL._SX90_SY90_.png",

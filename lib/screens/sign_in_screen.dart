@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indicart/resources/authentication_methods.dart';
+import 'package:indicart/screens/home_screen.dart';
 import 'package:indicart/screens/sign_up_screen.dart';
 import 'package:indicart/utils/color_themes.dart';
 import 'package:indicart/utils/constants.dart';
@@ -31,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     Size screenSize = Utils().getScreenSize();
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
           height: screenSize.height,
@@ -43,9 +44,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.network(
-                    amazonLogo,
-                    height: screenSize.height * 0.10,
+                  Text(
+                    "Indicart",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35,
+                        fontStyle: FontStyle.italic),
                   ),
                   Container(
                     height: screenSize.height * 0.6,
@@ -62,10 +66,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "Sign-In",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 33),
+                        const Center(
+                          child: Text(
+                            "Sign-In",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 33),
+                          ),
                         ),
                         TextFieldWidget(
                           title: "Email",
@@ -83,11 +89,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           alignment: Alignment.center,
                           child: CustomMainButton(
                               child: const Text(
-                                "Sign In",
+                                "Log In",
                                 style: TextStyle(
                                     letterSpacing: 0.6, color: Colors.black),
                               ),
-                              color: yellowColor,
+                              color: buttonColor,
                               isLoading: isLoading,
                               onPressed: () async {
                                 setState(() {
@@ -102,11 +108,17 @@ class _SignInScreenState extends State<SignInScreen> {
                                   isLoading = false;
                                 });
                                 if (output == "success") {
-                                  //functions
+                                  Navigator.pushReplacement(context,
+                                      MaterialPageRoute(
+                                    builder: (context) {
+                                      return const HomeScreen();
+                                    },
+                                  ));
                                 } else {
                                   //error
                                   Utils().showSnackBar(
-                                      context: context, content: output);
+                                      context: context,
+                                      content: output.substring(0, 25));
                                 }
                               }),
                         )
@@ -124,7 +136,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
-                          "New to Amazon?",
+                          "New to Indicart?",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ),
@@ -138,13 +150,13 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   CustomMainButton(
                       child: const Text(
-                        "Create an Amazon Account",
+                        "Create new Account",
                         style: TextStyle(
                           letterSpacing: 0.6,
                           color: Colors.black,
                         ),
                       ),
-                      color: Colors.grey[400]!,
+                      color: buttonColor,
                       isLoading: false,
                       onPressed: () {
                         Navigator.pushReplacement(
